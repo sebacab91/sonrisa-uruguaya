@@ -494,6 +494,25 @@
     padding: 20px;
   }
 
+  /* ---------- AYUDA (HELP PAGE) ---------- */
+  .ayuda { padding: 100px 0; background: var(--azul-claro); }
+
+  .ayuda-caja {
+    max-width: 760px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    height: 700px;
+  }
+
+  .ayuda-caja iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   /* ---------- CONTACTO ---------- */
   .contacto {
     padding: 90px 0 40px;
@@ -581,6 +600,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#sobre-nosotros">Sobre Nosotros</a>
         <a href="#preguntas-frecuentes">Preguntas Frecuentes</a>
+        <a href="#ayuda">Ayuda</a>
       </nav>
       <a href="#contacto" class="nav-btn">Contacto</a>
     </div>
@@ -707,11 +727,25 @@
         </details>
       </div>
 
-      <!-- ============================================= -->
-      <!-- PEGAR ACÁ EL SCRIPT DEL CHATBOT -->
-      <!-- ============================================= -->
-      <div class="chatbot-zona">
-        Acá se va a insertar el widget del chatbot de preguntas frecuentes.
+    </div>
+  </section>
+
+  <!-- ================= AYUDA (HELP PAGE CON IA) ================= -->
+  <section id="ayuda" class="ayuda">
+    <div class="contenedor">
+      <div class="titulo-seccion">
+        <span class="etiqueta">Asistencia inteligente</span>
+        <h2>Centro de Ayuda</h2>
+        <p>Hablá con nuestro asistente virtual para resolver tus dudas al instante, las 24 horas.</p>
+      </div>
+      <div class="ayuda-caja">
+        <iframe
+          src="https://www.chatbase.co/chatbot-iframe/QPH7emmvDtTOpLC0sgUj8"
+          width="100%"
+          style="height: 100%; min-height: 700px"
+          frameborder="0"
+          allow="microphone"
+        ></iframe>
       </div>
     </div>
   </section>
@@ -756,6 +790,11 @@
   <footer class="pie">
     <p>Sonrisa Uruguaya &mdash; Montevideo, Uruguay &middot; &copy; 2026 Todos los derechos reservados</p>
   </footer>
+
+  <!-- Widget del chatbot de Chatbase -->
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="QPH7emmvDtTOpLC0sgUj8";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
 
 </body>
 </html>
