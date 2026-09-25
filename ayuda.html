@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayuda · Sonrisa Uruguaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-profundo: #1c3f4e;
+    --azul-medio: #3f7a8c;
+    --azul-suave: #a9d8dd;
+    --azul-claro: #eaf6f8;
+    --celeste-fondo: #f4fbfc;
+    --blanco: #ffffff;
+    --texto: #33474d;
+    --texto-suave: #6b8288;
+    --dorado: #d9b872;
+    --sombra: 0 10px 30px rgba(28, 63, 78, 0.08);
+    --radio: 18px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--celeste-fondo);
+    color: var(--texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, .logo { font-family: 'Poppins', sans-serif; }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  .contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(28, 63, 78, 0.06);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--azul-profundo);
+    letter-spacing: 0.5px;
+  }
+
+  .logo span { color: var(--azul-medio); }
+
+  nav.links { display: flex; gap: 36px; }
+
+  nav.links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--texto);
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.25s ease;
+  }
+
+  nav.links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--azul-medio);
+    transition: width 0.3s ease;
+  }
+
+  nav.links a:hover { color: var(--azul-medio); }
+  nav.links a:hover::after { width: 100%; }
+
+  nav.links a.activo {
+    color: var(--azul-medio);
+  }
+
+  nav.links a.activo::after { width: 100%; }
+
+  .nav-btn {
+    background: var(--azul-profundo);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .nav-btn:hover {
+    background: var(--azul-medio);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 900px) {
+    nav.links { display: none; }
+  }
+
+  /* ---------- ENCABEZADO DE LA PÁGINA DE AYUDA ---------- */
+  .ayuda-hero {
+    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--celeste-fondo) 60%);
+    padding: 70px 0 40px;
+    text-align: center;
+  }
+
+  .ayuda-hero span.etiqueta {
+    display: inline-block;
+    background: var(--azul-claro);
+    color: var(--azul-profundo);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    border: 1px solid var(--azul-suave);
+  }
+
+  .ayuda-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--azul-profundo);
+    margin-bottom: 14px;
+  }
+
+  .ayuda-hero p {
+    color: var(--texto-suave);
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+
+  /* ---------- CONTENIDO PRINCIPAL ---------- */
+  main {
+    flex: 1;
+    padding: 40px 0 90px;
+  }
+
+  .ayuda-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+    align-items: start;
+  }
+
+  .ayuda-caja {
+    background: white;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    height: 640px;
+  }
+
+  .ayuda-caja iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .ayuda-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tarjeta-lateral {
+    background: white;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 26px;
+  }
+
+  .tarjeta-lateral h3 {
+    color: var(--azul-profundo);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .tarjeta-lateral p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .tarjeta-lateral ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tarjeta-lateral li {
+    font-size: 0.88rem;
+    color: var(--texto);
+    padding: 8px 12px;
+    background: var(--azul-claro);
+    border-radius: 10px;
+  }
+
+  .tarjeta-lateral.contacto-rapido {
+    background: var(--azul-profundo);
+    color: white;
+  }
+
+  .tarjeta-lateral.contacto-rapido h3 { color: white; }
+  .tarjeta-lateral.contacto-rapido p { color: #b9d3da; }
+  .tarjeta-lateral.contacto-rapido a { color: white; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .ayuda-layout { grid-template-columns: 1fr; }
+    .ayuda-caja { height: 560px; }
+  }
+
+  footer.pie {
+    text-align: center;
+    padding: 24px;
+    background: #163340;
+    color: #8fadb5;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html#inicio" class="logo">Sonrisa <span>Uruguaya</span></a>
+      <nav class="links">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#sobre-nosotros">Sobre Nosotros</a>
+        <a href="index.html#preguntas-frecuentes">Preguntas Frecuentes</a>
+        <a href="ayuda.html" class="activo">Ayuda</a>
+      </nav>
+      <a href="index.html#contacto" class="nav-btn">Contacto</a>
+    </div>
+  </header>
+
+  <!-- ================= ENCABEZADO ================= -->
+  <section class="ayuda-hero">
+    <div class="contenedor">
+      <span class="etiqueta">Asistencia inteligente</span>
+      <h1>Centro de Ayuda</h1>
+      <p>Hablá con nuestro asistente virtual, disponible las 24 horas, para resolver tus dudas sobre horarios, servicios, urgencias y ubicación de la clínica.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTENIDO: AGENTE + INFO LATERAL ================= -->
+  <main class="contenedor">
+    <div class="ayuda-layout">
+      <div class="ayuda-caja">
+        <iframe
+          src="https://www.chatbase.co/chatbot-iframe/QPH7emmvDtTOpLC0sgUj8"
+          width="100%"
+          style="height: 100%; min-height: 640px"
+          frameborder="0"
+          allow="microphone"
+        ></iframe>
+      </div>
+
+      <aside class="ayuda-lateral">
+        <div class="tarjeta-lateral">
+          <h3>¿Sobre qué te puede ayudar?</h3>
+          <p>Preguntale directamente al asistente cosas como:</p>
+          <ul>
+            <li>¿Qué horario tienen?</li>
+            <li>¿Atienden urgencias hoy?</li>
+            <li>¿Dónde queda la clínica?</li>
+            <li>¿Atienden niños?</li>
+          </ul>
+        </div>
+
+        <div class="tarjeta-lateral contacto-rapido">
+          <h3>¿Preferís hablar con una persona?</h3>
+          <p>Escribinos o llamanos directamente:</p>
+          <p><a href="mailto:contacto@sonrisauruguaya.com">contacto@sonrisauruguaya.com</a></p>
+          <p><a href="tel:+59821234567">+598 2123 4567</a></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>Sonrisa Uruguaya &mdash; Montevideo, Uruguay &middot; &copy; 2026 Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Widget del chatbot de Chatbase -->
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="QPH7emmvDtTOpLC0sgUj8";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+
+</body>
+</html>
