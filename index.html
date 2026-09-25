@@ -482,35 +482,19 @@
     font-size: 0.95rem;
   }
 
-  /* zona reservada para el widget del chatbot */
-  .chatbot-zona {
+  .faq-cta {
     max-width: 760px;
-    margin: 40px auto 0;
+    margin: 30px auto 0;
     text-align: center;
-    color: var(--texto-suave);
-    font-size: 0.85rem;
-    border: 2px dashed var(--azul-suave);
+    background: var(--azul-claro);
     border-radius: 14px;
-    padding: 20px;
+    padding: 24px;
   }
 
-  /* ---------- AYUDA (HELP PAGE) ---------- */
-  .ayuda { padding: 100px 0; background: var(--azul-claro); }
-
-  .ayuda-caja {
-    max-width: 760px;
-    margin: 0 auto;
-    background: white;
-    border-radius: var(--radio);
-    box-shadow: var(--sombra);
-    overflow: hidden;
-    height: 700px;
-  }
-
-  .ayuda-caja iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
+  .faq-cta p {
+    color: var(--texto-suave);
+    margin-bottom: 14px;
+    font-size: 0.95rem;
   }
 
   /* ---------- CONTACTO ---------- */
@@ -600,7 +584,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#sobre-nosotros">Sobre Nosotros</a>
         <a href="#preguntas-frecuentes">Preguntas Frecuentes</a>
-        <a href="#ayuda">Ayuda</a>
+        <a href="ayuda.html">Ayuda</a>
       </nav>
       <a href="#contacto" class="nav-btn">Contacto</a>
     </div>
@@ -727,26 +711,11 @@
         </details>
       </div>
 
-    </div>
-  </section>
+      <div class="faq-cta">
+        <p>¿Tenés otra consulta? Nuestro asistente virtual está disponible las 24 horas.</p>
+        <a href="ayuda.html" class="btn-primario">Ir al Centro de Ayuda</a>
+      </div>
 
-  <!-- ================= AYUDA (HELP PAGE CON IA) ================= -->
-  <section id="ayuda" class="ayuda">
-    <div class="contenedor">
-      <div class="titulo-seccion">
-        <span class="etiqueta">Asistencia inteligente</span>
-        <h2>Centro de Ayuda</h2>
-        <p>Hablá con nuestro asistente virtual para resolver tus dudas al instante, las 24 horas.</p>
-      </div>
-      <div class="ayuda-caja">
-        <iframe
-          src="https://www.chatbase.co/chatbot-iframe/QPH7emmvDtTOpLC0sgUj8"
-          width="100%"
-          style="height: 100%; min-height: 700px"
-          frameborder="0"
-          allow="microphone"
-        ></iframe>
-      </div>
     </div>
   </section>
 
